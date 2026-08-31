@@ -1,0 +1,59 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "Color Temperature Light Mixer CW",
+                "description": "Combine two lights of different color temperatures into a single light entity. Color temperature priority keeps kelvin exact and treats 100% as the brightest mix at that kelvin.",
+                "data": {
+                    "name": "Name",
+                    "warm_light_entity_id": "Warm light",
+                    "warm_light_color_temp_kelvin": "Warm light color temperature (K)",
+                    "cold_light_entity_id": "Cold light",
+                    "cold_light_color_temp_kelvin": "Cold light color temperature (K)",
+                    "priority": "Priority"
+                },
+                "data_description": {
+                    "name": "The name of the light",
+                    "warm_light_entity_id": "Light acting as the warmer light source (yellow-ish color)",
+                    "warm_light_color_temp_kelvin": "Color temperature of the warm light source (in Kelvin). This is the virtual light minimum.",
+                    "cold_light_entity_id": "Light acting as the colder light source (blu-ish color)",
+                    "cold_light_color_temp_kelvin": "Color temperature of the cold light source (in Kelvin). This is the virtual light maximum.",
+                    "priority": "Color temperature keeps kelvin exact (2700K with WW full / CW off reports 100%). Brightness keeps both channels contributing to 100% and may shift kelvin."
+                }
+            },
+            "reconfigure": {
+                "title": "Reconfigure mixer",
+                "description": "Warm/cold entities and their kelvin values set the virtual light range. Priority chooses max-at-CCT vs both-channels-full.",
+                "data": {
+                    "warm_light_entity_id": "Warm light",
+                    "warm_light_color_temp_kelvin": "Warm light color temperature (K)",
+                    "cold_light_entity_id": "Cold light",
+                    "cold_light_color_temp_kelvin": "Cold light color temperature (K)",
+                    "priority": "Priority"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "Mixer settings",
+                "description": "These are the same fields as the original mixer. Warm/cold kelvin are the min/max of the virtual light. Priority color temperature: 100% is the maximum at that kelvin.",
+                "data": {
+                    "warm_light_entity_id": "Warm light",
+                    "warm_light_color_temp_kelvin": "Warm light color temperature (K)",
+                    "cold_light_entity_id": "Cold light",
+                    "cold_light_color_temp_kelvin": "Cold light color temperature (K)",
+                    "priority": "Priority"
+                },
+                "data_description": {
+                    "warm_light_entity_id": "Entity that drives the warm-white channel",
+                    "warm_light_color_temp_kelvin": "Kelvin of the WW LEDs (virtual light minimum, e.g. 2700)",
+                    "cold_light_entity_id": "Entity that drives the cold-white channel",
+                    "cold_light_color_temp_kelvin": "Kelvin of the CW LEDs (virtual light maximum, e.g. 6500)",
+                    "priority": "Color temperature: 2700K + 90% stays 2700K and 90%. Brightness: 100% is both channels full and kelvin may drift."
+                }
+            }
+        }
+    }
+}

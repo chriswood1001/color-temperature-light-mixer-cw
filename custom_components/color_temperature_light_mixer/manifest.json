@@ -1,0 +1,16 @@
+{
+    "domain": "color_temperature_light_mixer",
+    "name": "Color Temperature Light Mixer CW",
+    "after_dependencies": ["light", "sensor"],
+    "codeowners": [
+        "@chriswood1001"
+    ],
+    "config_flow": true,
+    "dependencies": [],
+    "documentation": "https://github.com/chriswood1001/color-temperature-light-mixer-cw",
+    "integration_type": "service",
+    "iot_class": "calculated",
+    "issue_tracker": "https://github.com/chriswood1001/color-temperature-light-mixer-cw/issues",
+    "requirements": [],
+    "version": "0.2.0"
+}
